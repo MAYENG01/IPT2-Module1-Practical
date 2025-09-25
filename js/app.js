@@ -1,4 +1,4 @@
-// Add Student Function
+// Add Student function
 document.getElementById('addStudentButton').addEventListener('click', function() {
     const id = document.getElementById('idNumber').value;
     const first = document.getElementById('firstName').value;
@@ -12,13 +12,13 @@ document.getElementById('addStudentButton').addEventListener('click', function()
 
     const table = document.getElementById('table-content');
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${id}</td><td>${first}</td><td>${middle}</td><td>${last}</td>`;
+    row.innerHTML = <td>${id}</td><td>${first}</td><td>${middle}</td><td>${last}</td>;
     table.appendChild(row);
 
     document.getElementById('studentForm').reset();
 });
 
-// Add Subject Function
+// Add Subject function
 document.getElementById('addSubject').addEventListener('click', function() {
     const code = document.getElementById('subjectCode').value;
     const name = document.getElementById('subjectName').value;
@@ -29,9 +29,9 @@ document.getElementById('addSubject').addEventListener('click', function() {
         return;
     }
 
-    const table = document.getElementById('subject-table-content');
+    const table = document.getElementById('table-content');
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${code}</td><td>${name}</td><td>${units}</td>`;
+    row.innerHTML = <td>${code}</td><td>${name}</td><td>${units}</td>;
     table.appendChild(row);
 
     document.getElementById('subjectForm').reset();
