@@ -1,20 +1,28 @@
-// Add Subject Function
-document.getElementById('addSubject').addEventListener('click', function() {
-    const code = document.getElementById('subjectCode').value;
-    const name = document.getElementById('subjectName').value;
-    const units = document.getElementById('units').value;
+document.getElementById('addSubject').addEventListener('click', function () {
+    const code = document.getElementById('subjectCode').value.trim();
+    const name = document.getElementById('subjectName').value.trim();
+    const units = document.getElementById('units').value.trim();
 
-    // Check if all fields are filled
+    // Validate input fields
     if (!code || !name || !units) {
         alert('Please fill in all fields');
         return;
     }
 
-    const table = document.getElementById('subject-table-content');
+    // Get the table body
+    const table = document.getElementById('table-content');
+
+    // Create a new row
     const row = document.createElement('tr');
-    row.innerHTML = <td>${code}</td><td>${name}</td><td>${units}</td>;
+    row.innerHTML = `
+        <td>${code}</td>
+        <td>${name}</td>
+        <td>${units}</td>
+    `;
+
+    // Append the row to the table
     table.appendChild(row);
 
-    // Clear inputs
+    // Reset the form after adding
     document.getElementById('subjectForm').reset();
 });
